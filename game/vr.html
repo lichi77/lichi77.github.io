@@ -4,136 +4,93 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VR 教材開發｜黃莉淇 作品集</title>
+    <title>VR 地球科學教材開發｜黃莉淇 作品集</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Noto Sans TC', sans-serif;
-            background: #111;
-            color: #eee;
-            line-height: 1.8;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 2rem 1rem;
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .subtitle {
-            color: #aaa;
-            margin-bottom: 2rem;
-        }
-
-        .section img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
-            margin-top: 1rem;
-        }
-
-        footer {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #666;
-            padding: 2rem 1rem;
-            border-top: 1px solid #333;
-            margin-top: 4rem;
-        }
-
-        .top-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 97%;
-            background: rgba(15, 15, 15, 0.8);
-            color: #eee;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.6rem 1.5rem;
-            z-index: 999;
-            backdrop-filter: blur(6px);
-            font-size: 0.95rem;
-        }
-
-        .top-logo {
-            color: #eee;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: opacity 0.3s;
-        }
-
-        .top-logo:hover {
-            opacity: 0.7;
-        }
-
-        .category {
-            font-size: 1rem;
-            color: #88f0ff;
-            font-weight: 500;
-        }
-
-        .nav-buttons a {
-            margin-left: 1rem;
-            color: #eee;
-            text-decoration: none;
-            font-size: 1.4rem;
-            transition: transform 0.2s ease;
-        }
-
-        .nav-buttons a:hover {
-            transform: scale(1.2);
-            color: #fff;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/game.css" />
 </head>
 
 <body>
     <div class="top-bar">
-        <a href="index.html" class="top-logo">黃莉淇</a>
-        <div class="category">遊戲 Game</div>
-        <div class="nav-buttons">
-            <a href="vr.html" title="上一個作品">◀</a>
-            <a href="2dgame.html" title="下一個作品">▶</a>
-        </div>
+        <a href="../index.html" class="logo-link">
+            <img src="../assets/img/logo.png" alt="Logo" class="logo-img">
+            <span class="top-logo">黃莉淇</span>
+        </a>
+        <span class="category">遊戲 Game</span>
     </div>
+
+    <!-- 側邊導航箭頭 -->
+    <a href="../web/uba.html" class="side-arrow prev-arrow" title="上一個作品"></a>
+    <a href="2d.html" class="side-arrow next-arrow" title="下一個作品"></a>
+
     <div class="container">
         <h1>VR 地球科學教材開發</h1>
-        <p class="subtitle">使用技術與工具：Unity、C#、OpenXR、Meta Quest 3 (Meta Quest 2)、HTC VIVE Focus 3</p>
+        <p class="subtitle">使用技術與工具：Unity、C#、OpenXR、Meta Quest 3、HTC VIVE Focus 3</p>
+        <h2>簡介</h2>
+        <p>此為教育部113-114年「虛擬實境教學應用教材開發與教學實施計畫」，使用 Unity 3D 與 OpenXR 技術開發，設計並實作沉浸式 VR
+            地球科學教材。教材內容依據高中地科課綱分為三個單元，涵蓋大陸漂移、海底擴張、板塊運動、地質構造與震源分布等核心概念，讓學生能於虛擬環境中觀察地質變化、模擬地殼運動，提升理解力與學習動機。<br>
+            製作Meta Quest 3(2)以及HTC VIVE Focus 3版本，使用者可透過控制器或手部追蹤進行操作，如拖曳板塊模擬擠壓碰撞、觀察海底擴張等，強化空間理解與主動探索能力。</p>
 
-        <div class="section">
-            <p>此為教育部113-114年「虛擬實境教學應用教材開發與教學實施計畫」</p>
-            <img src="assets/img/vr-1.jpg" alt="VR 畫面">
-        </div>
+        <section class="section responsibilities-section">
+            <h2>主要負責內容</h2>
+            <ul class="responsibilities-list">
+                <li>第一單元第三與第四分鏡整體開發</li>
+                <li>教學場景與互動流程設計</li>
+                <li>互動邏輯程式撰寫與場景建置</li>
+                <li>角色語音與任務引導規劃</li>
+            </ul>
+        </section>
 
-        <div class="section two-column">
-            <div>
-                <h2>開發流程</h2>
-                <p>使用 Unity 進行場景搭建與互動邏輯設計，並透過 C# 編寫各種互動邏輯與教材切換功能。主要挑戰在於教材的模組化與操作流暢性設計。</p>
+        <div class="section image-gallery">
+            <h2>遊玩畫面</h2>
+            <div class="main-image">
+                <!-- 初始主圖 -->
+                <img id="mainImg" src="../assets/img/vr-1.png" alt="VR 展示畫面">
             </div>
-            <img src="assets/img/vr-2.jpg" alt="開發畫面">
+            <div class="thumbnails">
+                <!-- 只顯示不是主圖的縮圖 -->
+                <img class="thumb" data-large="../assets/img/vr-2.jpg" src="../assets/img/vr-2.jpg" alt="VR 展示畫面">
+                <img class="thumb" data-large="../assets/img/vr-3.png" src="../assets/img/vr-3.png" alt="VR 場景畫面">
+                <img class="thumb" data-large="../assets/img/vr-4.png" src="../assets/img/vr-4.png" alt="互動元素畫面">
+            </div>
         </div>
 
         <div class="section">
             <h2>作品展示影片</h2>
-            <iframe width="100%" height="400" src="https://www.youtube.com/embed/影片ID" frameborder="0"
-                allowfullscreen></iframe>
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/94DFbMaQ7Po?si=T9bmBSQbiLX9o-BC"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
 
-    <footer>
-        © 2025 黃莉淇｜互動作品集
-    </footer>
+    <!-- 底部分頁點 -->
+    <div class="page-dots">
+        <a href="vr.html" class="dot active"></a>
+        <a href="2d.html" class="dot"></a>
+        <a href="webgame.html" class="dot"></a>
+    </div>
+
+    <footer>© 2025 黃莉淇｜Huang, LI-CHI Portfolio</footer>
+
+    <script>
+        const mainImg = document.getElementById('mainImg');
+        document.querySelectorAll('.thumbnails .thumb').forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                // 互換主圖和縮圖
+                const newLarge = thumb.dataset.large;
+                const prevLarge = mainImg.src;
+                // 更新主圖
+                mainImg.src = newLarge;
+                // 更新被點擊的縮圖為先前主圖
+                thumb.dataset.large = prevLarge;
+                // 推算並更新縮圖網址 (filename-thumb.ext)
+                const segments = prevLarge.split('/');
+                const filename = segments.pop();
+                const thumbFilename = filename.replace(/\.(jpg|png)$/, '.$1');
+                thumb.src = segments.concat(thumbFilename).join('/');
+            });
+        });
+    </script>
 </body>
 
 </html>

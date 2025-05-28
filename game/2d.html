@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2D遊戲｜黃莉淇 作品集</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/game.css" />
+</head>
+
+<body>
+    <div class="top-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../assets/img/logo.png" alt="Logo" class="logo-img">
+            <span class="top-logo">黃莉淇</span>
+        </a>
+        <span class="category">遊戲 Game</span>
+    </div>
+
+    <!-- 側邊導航箭頭 -->
+    <a href="vr.html" class="side-arrow prev-arrow" title="上一個作品"></a>
+    <a href="webgame.html" class="side-arrow next-arrow" title="下一個作品"></a>
+
+    <div class="container">
+        <h1>2D 遊戲: Lumoria</h1>
+        <p class="subtitle">使用技術與工具：Unity、C#</p>
+        <h2>簡介</h2>
+        <p>使用Unity製作的 2D 冒險解謎遊戲，玩家操控角色在迷宮中探索，解謎與完成任務。</p>
+
+        <section class="section responsibilities-section">
+            <h2>主要負責內容</h2>
+            <ul class="responsibilities-list">
+                <li>發想遊戲企劃與解謎流程（故事背景、任務設計）</li>
+                <li>挑選與整合素材，設計場景配置與整體風格</li>
+                <li>建置遊戲地圖及配置素材</li>
+                <li>場景建置、互動配置與音效整合</li>
+            </ul>
+        </section>
+
+        <div class="section image-gallery">
+            <h2>遊玩畫面</h2>
+            <div class="main-image">
+                <!-- 初始主圖 -->
+                <img id="mainImg" src="../assets/img/2d-1.png">
+            </div>
+            <div class="thumbnails">
+                <!-- 只顯示不是主圖的縮圖 -->
+                <img class="thumb" data-large="../assets/img/2d.jpg" src="../assets/img/2d.jpg">
+                <img class="thumb" data-large="../assets/img/2d-2.png" src="../assets/img/2d-2.png">
+                <img class="thumb" data-large="../assets/img/2d-4.jpg" src="../assets/img/2d-4.jpg">
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部分頁點 -->
+    <div class="page-dots">
+        <a href="vr.html" class="dot"></a>
+        <a href="2d.html" class="dot active"></a>
+        <a href="webgame.html" class="dot"></a>
+    </div>
+
+    <footer>© 2025 黃莉淇｜Huang, LI-CHI Portfolio</footer>
+
+    <script>
+        const mainImg = document.getElementById('mainImg');
+        document.querySelectorAll('.thumbnails .thumb').forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                // 互換主圖和縮圖
+                const newLarge = thumb.dataset.large;
+                const prevLarge = mainImg.src;
+                // 更新主圖
+                mainImg.src = newLarge;
+                // 更新被點擊的縮圖為先前主圖
+                thumb.dataset.large = prevLarge;
+                // 推算並更新縮圖網址 (filename-thumb.ext)
+                const segments = prevLarge.split('/');
+                const filename = segments.pop();
+                const thumbFilename = filename.replace(/\.(jpg|png)$/, '.$1');
+                thumb.src = segments.concat(thumbFilename).join('/');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>網頁遊戲｜黃莉淇 作品集</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/game.css" />
+</head>
+
+<body>
+    <div class="top-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../assets/img/logo.png" alt="Logo" class="logo-img">
+            <span class="top-logo">黃莉淇</span>
+        </a>
+        <span class="category">遊戲 Game</span>
+    </div>
+
+    <!-- 側邊導航箭頭 -->
+    <a href="2d.html" class="side-arrow prev-arrow" title="上一個作品"></a>
+    <a href="../web/web.html" class="side-arrow next-arrow" title="下一個作品"></a>
+    <!-- <a href="../other/cpp.html" class="side-arrow next-arrow" title="下一個作品"></a> -->
+
+    <div class="container">
+        <h1>網頁遊戲: 神之寶藏</h1>
+        <p class="subtitle">使用技術與工具：Visual Studio Code、Phaser.js、HTML、CSS、JavaScript</p>
+        <h2>簡介</h2>
+        <p>以古代文明為主題的雙人合作橫向通關網頁遊戲，玩家需合作通過障礙，收集寶物完成關卡。</p>
+
+        <section class="section responsibilities-section">
+            <h2>主要負責內容</h2>
+            <ul class="responsibilities-list">
+                <li>發想遊戲流程與機關關卡設計</li>
+                <li>整合場景素材，設計角色差異性與關卡節奏</li>
+                <li>使用 Phaser 建置角色互動與畫面邏輯</li>
+                <li>測試功能與完成關卡過關條件設定</li>
+            </ul>
+        </section>
+
+        <div class="section image-gallery">
+            <h2>遊玩畫面</h2>
+            <div class="main-image">
+                <!-- 初始主圖 -->
+                <img id="mainImg" src="../assets/img/webgame-1.png">
+            </div>
+            <div class="thumbnails">
+                <!-- 只顯示不是主圖的縮圖 -->
+                <img class="thumb" data-large="../assets/img/webgame-2.png" src="../assets/img/webgame-2.png">
+                <img class="thumb" data-large="../assets/img/webgame.png" src="../assets/img/webgame.png">
+                <img class="thumb" data-large="../assets/img/webgame-3.png" src="../assets/img/webgame-3.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部分頁點 -->
+    <div class="page-dots">
+        <a href="vr.html" class="dot"></a>
+        <a href="2d.html" class="dot"></a>
+        <a href="webgame.html" class="dot active"></a>
+    </div>
+
+    <footer>© 2025 黃莉淇｜Huang, LI-CHI Portfolio</footer>
+
+    <script>
+        const mainImg = document.getElementById('mainImg');
+        document.querySelectorAll('.thumbnails .thumb').forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                // 互換主圖和縮圖
+                const newLarge = thumb.dataset.large;
+                const prevLarge = mainImg.src;
+                // 更新主圖
+                mainImg.src = newLarge;
+                // 更新被點擊的縮圖為先前主圖
+                thumb.dataset.large = prevLarge;
+                // 推算並更新縮圖網址 (filename-thumb.ext)
+                const segments = prevLarge.split('/');
+                const filename = segments.pop();
+                const thumbFilename = filename.replace(/\.(jpg|png)$/, '.$1');
+                thumb.src = segments.concat(thumbFilename).join('/');
+            });
+        });
+    </script>
+</body>
+
+</html>
